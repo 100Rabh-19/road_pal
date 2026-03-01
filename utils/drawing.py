@@ -188,3 +188,17 @@ def render_frame(
     if is_drowsy:
         draw_alert_banner(frame)
 
+
+# adding a fps Counter
+def draw_fps(frame: np.ndarray, fps: float):
+    """Display FPS in bottom-left corner for performance monitoring."""
+    h = frame.shape[0]
+    cv2.putText(
+        frame,
+        f"FPS: {fps:.1f}",
+        (10, h - 10),
+        FONT,
+        FONT_SCALE,
+        (255, 255, 0),  # Yellow
+        FONT_THICKNESS,
+    )
